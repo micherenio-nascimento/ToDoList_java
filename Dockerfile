@@ -12,6 +12,6 @@ FROM openjdk:17-jdk-slim
 
 EXPOSE 8080
 
-COPY --from=maven_builder /app/target/*.jar up-user-service/target
+COPY --from=maven_builder /app/target/todolist-1.0.0.jar up-user-service/target
 
 ENTRYPOINT [ "java", "-jar", "app.jar"]
