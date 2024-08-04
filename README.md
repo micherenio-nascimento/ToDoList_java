@@ -7,3 +7,6 @@
 ### Criar tarefa: https://todolist-1vfr.onrender.com/tasks/
 
 ### Modificar tarefa: https://todolist-1vfr.onrender.com/tasks/<ID>
+
+## Categoria
+**backend**
