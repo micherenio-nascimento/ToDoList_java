@@ -1,5 +1,6 @@
 package com.micherenio.todo_list;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -13,6 +14,11 @@ public class TaskController {
     @GetMapping
     public List<Task> getAllTasks() {
         return taskService.getAllTasks();
+    }
+
+    @GetMapping("/{id}")
+    public Task getTaskById(@PathVariable long id) {
+        return taskService.getTaskById(id);
     }
 
     @PostMapping

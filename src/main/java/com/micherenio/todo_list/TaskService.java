@@ -33,5 +33,14 @@ public class TaskService {
     public boolean deleteTask(long id) {
         return tasks.removeIf(task -> task.getId() == id);
     }
+
+	public Task getTaskById(long id) {
+        for (Task task : tasks) {
+            if (task.getId() == id) {
+                return task;
+            }
+        }
+        throw new RuntimeException("Task with ID " + id + " not found");
+    }
     
 }
