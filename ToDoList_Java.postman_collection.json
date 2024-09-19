@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "ce632b81-e5a3-488f-89f3-1041b218a29c",
+		"name": "ToDoList_Java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29777951"
+	},
+	"item": [
+		{
+			"name": "Get tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Post task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":1, \n    \"description\":\"Primeiro item\", \n    \"completed\":false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Put task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":1, \n    \"description\":\"TESTE\", \n    \"completed\":false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/tasks/1"
+			},
+			"response": []
+		},
+		{
+			"name": "New request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": ""
+			},
+			"response": []
+		}
+	]
+}
