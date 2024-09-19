@@ -1,7 +1,6 @@
 package com.micherenio.todo_list;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -17,8 +16,8 @@ public class TaskController {
     }
 
     @PostMapping
-    public Task createTask(@RequestBody String description) {
-        return taskService.addTask(description);
+    public Task createTask(@Valid @RequestBody Task task) {
+        return taskService.addTask(task.getDescription());
     }
 
     @PutMapping("/{id}")
