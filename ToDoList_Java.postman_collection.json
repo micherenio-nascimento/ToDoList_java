@@ -7,58 +7,122 @@
 	},
 	"item": [
 		{
-			"name": "Get tasks",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "http://localhost:8080/tasks"
-			},
-			"response": []
-		},
-		{
-			"name": "Post task",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"id\":1, \n    \"description\":\"Primeiro item\", \n    \"completed\":false\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+			"name": "Prod",
+			"item": [
+				{
+					"name": "Post task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1, \n    \"description\":\"Segundo item\", \n    \"completed\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://todolist-java-6k8d.onrender.com/tasks"
+					},
+					"response": []
 				},
-				"url": "http://localhost:8080/tasks"
-			},
-			"response": []
-		},
-		{
-			"name": "Put task",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"id\":1, \n    \"description\":\"TESTE\", \n    \"completed\":false\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+				{
+					"name": "Get All tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://todolist-java-6k8d.onrender.com/tasks"
+					},
+					"response": []
 				},
-				"url": "http://localhost:8080/tasks/1"
-			},
-			"response": []
+				{
+					"name": "Put task",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1, \n    \"description\":\"Primeiro item\", \n    \"completed\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://todolist-java-6k8d.onrender.com/tasks/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "https://todolist-java-6k8d.onrender.com/tasks/2"
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"name": "New request",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": ""
-			},
-			"response": []
+			"name": "test",
+			"item": [
+				{
+					"name": "Post task",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1, \n    \"description\":\"Terceiro item\", \n    \"completed\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/tasks"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/tasks"
+					},
+					"response": []
+				},
+				{
+					"name": "Put task",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1, \n    \"description\":\"Primeiro item\", \n    \"completed\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/tasks/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "https://todolist-java-6k8d.onrender.com/tasks/3"
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
