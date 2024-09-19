@@ -8,4 +8,4 @@ ENV PORT=8080
 
 EXPOSE 8080
 
-CMD ["java", "-Dserver.port=$PORT", "-jar", "todo-list.jar"]
+CMD ["sh", "-c", "java -Dserver.port=$PORT -jar todo-list.jar"]
