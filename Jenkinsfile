@@ -2,9 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials') // Defina suas credenciais do Docker Hub
-        DOCKER_IMAGE = 'nascimentomicherenio/todojava' // Nome da imagem Docker
-       // KUBERNETES_CONTEXT = 'minikube' // Certifique-se de que o Minikube esteja rodando localmente
+        DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials')
     }
 
     stages {
@@ -12,22 +10,21 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-                    // Faz o build da imagem Docker
-                    docker.build("${DOCKER_IMAGE}:latest")
+                    sh 'docker build -t nascimentomicherenio/todojava:latest .'
                 }
             }
         }
 
-        // stage('Docker Push') {
-        //     steps {
-        //         script {
-        //             docker.withRegistry('https://index.docker.io/v1/', 'DOCKER_HUB_CREDENTIALS') {
-        //                 // Push da imagem para o Docker Hub
-        //                 docker.image("${DOCKER_IMAGE}:latest").push()
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Docker Push') {
+            steps {
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', 'DOCKER_HUB_CREDENTIALS') {
+                        // Push da imagem para o Docker Hub
+                        docker.image("${DOCKER_IMAGE}:latest").push()
+                    }
+                }
+            }
+        }
 
         // stage('Deploy to Kubernetes') {
         //     steps {
