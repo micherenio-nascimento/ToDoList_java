@@ -23,16 +23,15 @@ pipeline {
             }
         }
 
-        // stage('Docker Push') {
-        //     steps {
-        //         script {
-        //             docker.withRegistry('https://index.docker.io/v1/', 'DOCKER_HUB_CREDENTIALS') {
-        //                 // Push da imagem para o Docker Hub
-        //                 docker.image("${DOCKER_IMAGE}:latest").push()
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Docker Push') {
+            steps {
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', 'DOCKER_HUB_CREDENTIALS') {
+                        docker.image("${DOCKER_IMAGE}:latest").push()
+                    }
+                }
+            }
+        }
 
         // stage('Deploy to Kubernetes') {
         //     steps {
