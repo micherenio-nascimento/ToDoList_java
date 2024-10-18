@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials') // Defina suas credenciais do Docker Hub
+       // DOCKER_HUB_CREDENTIALS = credentials('dockerhub-credentials') // Defina suas credenciais do Docker Hub
         DOCKER_IMAGE = 'nascimentomicherenio/todojava' // Nome da imagem Docker
        // KUBERNETES_CONTEXT = 'minikube' // Certifique-se de que o Minikube esteja rodando localmente
     }
