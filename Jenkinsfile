@@ -6,7 +6,6 @@ pipeline {
     }
 
     stages {
-
         stage('Docker Build') {
             steps {
                 script {
@@ -15,7 +14,7 @@ pipeline {
             }
         }
 
-        stage('Login'){
+        stage('Login') {
             steps {
                 script {
                     sh 'echo $DOCKER_HUB_CREDENTIALS_PSW | docker login -u $DOCKER_HUB_CREDENTIALS_USR --password-stdin'
@@ -25,24 +24,11 @@ pipeline {
 
         stage('Docker Push') {
             steps {
-                sh 'docker push nascimentomicherenio/todojava:latest'
+                script {
+                    sh 'docker push nascimentomicherenio/todojava:latest'
+                }
             }
         }
-
-        // stage('Deploy to Kubernetes') {
-        //     steps {
-        //         script {
-        //             // Configura o kubectl com o contexto do Minikube
-        //             sh 'kubectl config use-context ${KUBERNETES_CONTEXT}'
-
-        //             // Atualiza o deployment no Minikube
-        //             sh """
-        //                 kubectl set image deployment/nome-do-deployment \
-        //                 nome-do-container=${DOCKER_IMAGE}:latest
-        //             """
-        //         }
-        //     }
-        // }
     }
 
     post {
