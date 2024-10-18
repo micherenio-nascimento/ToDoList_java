@@ -15,16 +15,21 @@ pipeline {
             }
         }
 
-        stage('Docker Push') {
+        stage('Login'){
             steps {
-                script {
-                    docker.withRegistry('https://index.docker.io/v1/', 'DOCKER_HUB_CREDENTIALS') {
-                        // Push da imagem para o Docker Hub
-                        docker.image("${DOCKER_IMAGE}:latest").push()
-                    }
-                }
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         }
+        // stage('Docker Push') {
+        //     steps {
+        //         script {
+        //             docker.withRegistry('https://index.docker.io/v1/', 'DOCKER_HUB_CREDENTIALS') {
+        //                 // Push da imagem para o Docker Hub
+        //                 docker.image("${DOCKER_IMAGE}:latest").push()
+        //             }
+        //         }
+        //     }
+        // }
 
         // stage('Deploy to Kubernetes') {
         //     steps {
