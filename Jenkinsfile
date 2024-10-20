@@ -6,10 +6,18 @@ pipeline {
     }
 
     stages {
+        stage('Maven Build') {
+            steps {
+                script {
+                    sh 'mvn clean package'
+                }
+            }
+        }
+
         stage('Docker Build') {
             steps {
                 script {
-                    sh 'docker build -t nascimentomicherenio/todojava:latest .'
+                    sh 'docker build -t nascimentomicherenio/tomcat-jenkins-todolistjava:1.0 .'
                 }
             }
         }
@@ -25,7 +33,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 script {
-                    sh 'docker push nascimentomicherenio/todojava:latest'
+                    sh 'docker push nascimentomicherenio/tomcat-jenkins-todolistjava:1.0'
                 }
             }
         }
