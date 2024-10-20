@@ -6,6 +6,14 @@ pipeline {
     }
 
     stages {
+        stage('Maven Build') {
+            steps {
+                script {
+                    sh 'mvn clean package'
+                }
+            }
+        }
+
         stage('Docker Build') {
             steps {
                 script {
