@@ -17,7 +17,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-                    sh 'docker build -t nascimentomicherenio/tomcat-jenkins-todolistjava:1.0 .'
+                    sh 'docker build -t nascimentomicherenio/tomcat-jenkins-todolistjava:1.1 .'
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 script {
-                    sh 'docker push nascimentomicherenio/tomcat-jenkins-todolistjava:1.0'
+                    sh 'docker push nascimentomicherenio/tomcat-jenkins-todolistjava:1.1'
                 }
             }
         }
