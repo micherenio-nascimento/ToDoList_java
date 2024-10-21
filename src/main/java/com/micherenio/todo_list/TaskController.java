@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/tasks")
+@RequestMapping("/v2/tasks")
 public class TaskController {
 
     @Autowired
