@@ -1,3 +1,5 @@
+![Gravação da tela](./assets/Gravacao_de_tela.gif)
+___
 # ToDo List API - Java Spring Boot
 
 ## Descrição
